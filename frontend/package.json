@@ -1,0 +1,30 @@
+{
+  "name": "cs-student-blog",
+  "version": "1.0.0",
+  "description": "A personal blog for a computer science student to share knowledge and experiences.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "highlight.js": "^11.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.27.1"
+  },
+  "keywords": [
+    "blog",
+    "react",
+    "computer science",
+    "personal"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
