@@ -7,6 +7,8 @@ class LogoTriviaGame {
         this.timerInterval = null;
         this.score = 0;
         this.totalQuestions = 20;
+        this.timeLimit = 120; // 2 minutes in seconds
+        this.timeRemaining = this.timeLimit;
         
         this.initializeGame();
     }
@@ -26,6 +28,7 @@ class LogoTriviaGame {
         this.logoInputs = document.querySelectorAll('.logo-input');
         
         this.setupEventListeners();
+        this.updateTimerDisplay();
     }
     
     setupEventListeners() {
@@ -54,6 +57,7 @@ class LogoTriviaGame {
         this.gameActive = true;
         this.startTime = new Date();
         this.score = 0;
+        this.timeRemaining = this.timeLimit;
         
         // Hide start button and show game
         this.startBtn.style.display = 'none';
@@ -83,14 +87,55 @@ class LogoTriviaGame {
     }
     
     startTimer() {
+        this.updateTimerDisplay();
+        
         this.timerInterval = setInterval(() => {
             if (this.gameActive) {
-                const elapsed = new Date() - this.startTime;
-                const minutes = Math.floor(elapsed / 60000);
-                const seconds = Math.floor((elapsed % 60000) / 1000);
-                this.timerElement.textContent = 
-                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                this.timeRemaining--;
+                this.updateTimerDisplay();
+                
+                // Change timer color when time is running low
+                if (this.timeRemaining <= 30) {
+                    this.timerElement.style.color = '#ff4444';
+                    this.timerElement.style.fontWeight = 'bold';
+                } else if (this.timeRemaining <= 60) {
+                    this.timerElement.style.color = '#ff8800';
+                    this.timerElement.style.fontWeight = 'bold';
+                }
+                
+                // Auto-submit when time runs out
+                if (this.timeRemaining <= 0) {
+                    this.timeOut();
+                }
             }
+        }, 1000);
+    }
+    
+    updateTimerDisplay() {
+        const minutes = Math.floor(this.timeRemaining / 60);
+        const seconds = this.timeRemaining % 60;
+        this.timerElement.textContent = 
+            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        // Reset timer color when starting
+        if (this.timeRemaining === this.timeLimit) {
+            this.timerElement.style.color = 'white';
+            this.timerElement.style.fontWeight = '600';
+        }
+    }
+    
+    timeOut() {
+        if (!this.gameActive) return;
+        
+        // Show time out message briefly
+        const originalText = this.timerElement.textContent;
+        this.timerElement.textContent = 'TIME UP!';
+        this.timerElement.style.color = '#ff0000';
+        this.timerElement.style.fontWeight = 'bold';
+        
+        // Auto-submit after a brief delay
+        setTimeout(() => {
+            this.submitAnswers(true); // Pass true to indicate timeout
         }, 1000);
     }
     
@@ -147,25 +192,30 @@ class LogoTriviaGame {
         
         // Add common brand variations
         const brandVariations = {
-            'shell': ['royal dutch shell'],
-            'target': ['target corporation'],
-            'apple': ['apple inc'],
-            'taco bell': ['tacobell'],
-            'red bull': ['redbull'],
-            'coca cola': ['coke', 'coca-cola'],
-            'pepsi': ['pepsi cola', 'pepsico'],
-            'kfc': ['kentucky fried chicken'],
-            'playstation': ['sony playstation', 'ps'],
-            'monster': ['monster energy'],
-            'bp': ['british petroleum'],
-            'adidas': ['adidas ag'],
-            'amazon': ['amazon.com'],
-            'firefox': ['mozilla firefox'],
-            'adobe': ['adobe systems']
+            'ibm': ['international business machines'],
+            'qantas': ['qantas airways'],
+            'costco': ['costco wholesale'],
+            'kodak': ['eastman kodak'],
+            'lufthansa': ['deutsche lufthansa'],
+            'monster': ['monster energy', 'monster beverage'],
+            'qwen': ['qwen ai'],
+            'deepseek': ['deep seek', 'deepseek ai'],
+            'openai': ['open ai', 'chatgpt'],
+            'anthropic': ['claude', 'claude ai'],
+            'snapchat': ['snap inc', 'snap'],
+            'the north face': ['north face', 'tnf'],
+            'nestle': ['nestlé'],
+            'walmart': ['wal-mart'],
+            'reddit': ['reddit inc'],
+            'lipton': ['lipton tea'],
+            'xbox': ['microsoft xbox', 'xbox gaming'],
+            'lululemon': ['lululemon athletica'],
+            'cbs': ['columbia broadcasting system'],
+            'tadreamk': ['tadreamk inc']
         };
         
-        if (brandVariations[answer]) {
-            variations.push(...brandVariations[answer]);
+        if (brandVariations[answer.toLowerCase()]) {
+            variations.push(...brandVariations[answer.toLowerCase()]);
         }
         
         return variations;
@@ -188,7 +238,7 @@ class LogoTriviaGame {
         this.scoreElement.textContent = this.score;
     }
     
-    submitAnswers() {
+    submitAnswers(isTimeout = false) {
         if (!this.gameActive) return;
         
         this.gameActive = false;
@@ -215,17 +265,17 @@ class LogoTriviaGame {
         
         // Calculate final score and show results
         this.calculateScore();
-        this.showResults();
+        this.showResults(isTimeout);
         
         // Hide buttons
         this.submitBtn.style.display = 'none';
     }
     
-    showResults() {
+    showResults(isTimeout = false) {
         const endTime = new Date();
-        const totalTime = endTime - this.startTime;
-        const minutes = Math.floor(totalTime / 60000);
-        const seconds = Math.floor((totalTime % 60000) / 1000);
+        const totalTimeUsed = this.timeLimit - this.timeRemaining;
+        const minutes = Math.floor(totalTimeUsed / 60);
+        const seconds = totalTimeUsed % 60;
         
         this.finalScoreElement.textContent = this.score;
         this.finalTimeElement.textContent = 
@@ -235,20 +285,28 @@ class LogoTriviaGame {
         const percentage = (this.score / this.totalQuestions) * 100;
         let message = '';
         
+        if (isTimeout) {
+            message = '⏰ Time\'s up! ';
+        }
+        
         if (percentage === 100) {
-            message = '🏆 Perfect Score! You\'re a logo master!';
+            message += '🏆 Perfect Score! You\'re a logo master!';
         } else if (percentage >= 90) {
-            message = '🥇 Excellent! You know your brands well!';
+            message += '🥇 Excellent! You know your brands well!';
         } else if (percentage >= 80) {
-            message = '🥈 Great job! Very impressive brand knowledge!';
+            message += '🥈 Great job! Very impressive brand knowledge!';
         } else if (percentage >= 70) {
-            message = '🥉 Good work! You\'re pretty good with logos!';
+            message += '🥉 Good work! You\'re pretty good with logos!';
         } else if (percentage >= 60) {
-            message = '👍 Not bad! Keep practicing to improve!';
+            message += '👍 Not bad! Keep practicing to improve!';
         } else if (percentage >= 50) {
-            message = '📚 Room for improvement, but you\'re getting there!';
+            message += '📚 Room for improvement, but you\'re getting there!';
         } else {
-            message = '💪 Keep trying! Brand recognition takes practice!';
+            message += '💪 Keep trying! Brand recognition takes practice!';
+        }
+        
+        if (isTimeout) {
+            message += ' Try again for a full 2 minutes!';
         }
         
         this.performanceMessageElement.textContent = message;
@@ -262,6 +320,7 @@ class LogoTriviaGame {
         this.gameActive = false;
         this.stopTimer();
         this.score = 0;
+        this.timeRemaining = this.timeLimit;
         
         // Reset UI
         this.startBtn.style.display = 'inline-block';
@@ -271,7 +330,7 @@ class LogoTriviaGame {
         this.results.style.display = 'none';
         
         // Reset timer and score displays
-        this.timerElement.textContent = '00:00';
+        this.updateTimerDisplay();
         this.scoreElement.textContent = '0';
         
         // Clear all inputs and feedback
