@@ -200,7 +200,7 @@ class LogoTriviaGame {
             'monster': ['monster energy', 'monster beverage'],
             'qwen': ['qwen ai'],
             'deepseek': ['deep seek', 'deepseek ai'],
-            'openai': ['open ai', 'chatgpt'],
+            'openai': ['open ai'],
             'anthropic': ['claude', 'claude ai'],
             'snapchat': ['snap inc', 'snap'],
             'the north face': ['north face', 'tnf'],
@@ -210,8 +210,7 @@ class LogoTriviaGame {
             'lipton': ['lipton tea'],
             'xbox': ['microsoft xbox', 'xbox gaming'],
             'lululemon': ['lululemon athletica'],
-            'cbs': ['columbia broadcasting system'],
-            'tadreamk': ['tadreamk inc']
+            'cbs': ['columbia broadcasting system']
         };
         
         if (brandVariations[answer.toLowerCase()]) {
