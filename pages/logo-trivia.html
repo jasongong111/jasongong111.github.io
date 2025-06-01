@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Trivia Game - Jason Gong</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/logo-trivia.css">
+</head>
+<body>
+    <header>
+        <h1>Logo Trivia Game</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="logo-trivia.html" class="active">Logo Trivia</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="trivia-container">
+        <div class="game-header">
+            <div class="score-board">
+                <span class="score">Score: <span id="score">0</span>/20</span>
+                <span class="timer">Time: <span id="timer">00:00</span></span>
+            </div>
+            <button id="startBtn" class="start-btn">Start Quiz ▶</button>
+            <button id="submitBtn" class="submit-btn" style="display:none;">Check Answers</button>
+            <button id="resetBtn" class="reset-btn" style="display:none;">Reset Game</button>
+        </div>
+
+        <div id="gameGrid" class="logo-grid" style="display:none;">
+            <!-- Row 1 -->
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo shell-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="shell" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo wikipedia-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="wikipedia" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo target-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="target" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo apple-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="apple" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo pringles-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="pringles" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo taco-bell-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="taco bell" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo adidas-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="adidas" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo snapchat-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="snapchat" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo pepsi-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="pepsi" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo atari-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="atari" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo monster-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="monster" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo playstation-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="playstation" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo red-bull-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="red bull" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo amazon-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="amazon" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo bp-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="bp" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo dolby-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="dolby" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo firefox-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="firefox" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo kfc-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="kfc" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo adobe-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="adobe" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo-container">
+                    <div class="logo yamaha-logo"></div>
+                </div>
+                <input type="text" class="logo-input" data-answer="yamaha" placeholder="Company name...">
+                <span class="feedback"></span>
+            </div>
+        </div>
+
+        <div class="results" id="results" style="display:none;">
+            <h2>Game Results</h2>
+            <p class="final-score">Your Score: <span id="finalScore">0</span>/20</p>
+            <p class="final-time">Time Taken: <span id="finalTime">00:00</span></p>
+            <div class="performance-message" id="performanceMessage"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jason Gong</p>
+    </footer>
+    
+    <script src="../js/logo-trivia.js"></script>
+</body>
+</html> 
