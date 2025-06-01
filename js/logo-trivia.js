@@ -163,11 +163,11 @@ class LogoTriviaGame {
         
         if (isCorrect) {
             input.className = 'logo-input correct';
-            feedback.textContent = '✓ Correct!';
+            feedback.textContent = '✅ Correct!';
             feedback.className = 'feedback correct';
         } else {
             input.className = 'logo-input incorrect';
-            feedback.textContent = '✗ Try again...';
+            feedback.textContent = '❌ Try again...';
             feedback.className = 'feedback incorrect';
         }
     }
