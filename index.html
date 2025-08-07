@@ -1,43 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <link rel="stylesheet" href="css/styles.css">
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Engineer Portfolio</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+      :root {
+        --primary-50: #eff6ff;
+        --primary-100: #dbeafe;
+        --primary-500: #3b82f6;
+        --primary-600: #2563eb;
+        --neutral-50: #fafafa;
+        --neutral-100: #f5f5f5;
+        --neutral-200: #e5e5e5;
+        --neutral-300: #d4d4d4;
+        --neutral-600: #525252;
+        --neutral-700: #404040;
+        --neutral-800: #262626;
+        --neutral-900: #171717;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Personal Website</h1>
-        <nav>
-            <ul>
-                <a href="index.html">Home</a>
-                <a href="pages/about.html">About</a>
-                <a href="pages/portfolio.html">Portfolio</a>
-                <a href="pages/contact.html">Contact</a>
-                <a href="pages/logo-trivia.html">Logo Trivia</a>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>This is a brief introduction about myself and my work.</p>
-        </section>
-        <section>
-            <h2>Latest Projects</h2>
-            <p>Here are some of my latest projects that I have worked on.</p>
-            
-            <div style="margin-top: 20px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
-                <h3>🎮 Logo Trivia Game</h3>
-                <p>Test your brand knowledge with our interactive logo trivia game! Can you identify 20 famous company logos?</p>
-                <a href="pages/logo-trivia.html" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Play Now</a>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Jason Gong</p>
-    </footer>
-    <script src="js/main.js"></script>
-</body>
-</html>
+<body class="bg-var(--neutral-50) text-var(--neutral-800)">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden group/design-root">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-sm">
+<div class="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="text-var(--primary-600) size-8">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 21v-1.5M15.75 3v1.5m0 16.5v-1.5m3.75-12H21m-3.75 0h-1.5m-6 0H9m-3.75 0H3.75m0 0h1.5m3 0h1.5m6 0h1.5m-3.75 0h1.5m-6 0h1.5m1.5 0h3.75m-3.75 0h1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-var(--neutral-900)">Jason Gong</h2>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium text-var(--neutral-600) hover:text-var(--primary-600) transition-colors" href="#projects">Projects</a>
+<a class="text-sm font-medium text-var(--neutral-600) hover:text-var(--primary-600) transition-colors" href="#skills">Skills</a>
+<a class="text-sm font-medium text-var(--neutral-600) hover:text-var(--primary-600) transition-colors" href="#blog">Blog</a>
+<a class="inline-flex items-center justify-center rounded-md bg-var(--primary-600) px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-var(--primary-500) focus:outline-none focus:ring-2 focus:ring-var(--primary-500) focus:ring-offset-2" href="#contact">Contact</a>
+</nav>
+<button class="md:hidden">
+<svg class="size-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<section class="py-24 sm:py-32">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+<div class="space-y-6 text-center lg:text-left">
+<h1 class="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl text-var(--neutral-900)">AI Engineer &amp; Innovator</h1>
+<p class="max-w-2xl mx-auto text-lg text-var(--neutral-600) lg:mx-0">
+                    I build intelligent systems that solve complex problems. With a foundation in machine learning and deep learning, I craft innovative AI solutions that drive
+                    progress.
+                  </p>
+<a class="inline-flex h-12 items-center justify-center rounded-md bg-var(--primary-600) px-8 text-base font-medium text-white shadow-sm transition-colors hover:bg-var(--primary-500) focus:outline-none focus:ring-2 focus:ring-var(--primary-500) focus:ring-offset-2" href="#projects">Explore My Work</a>
+</div>
+<div class="flex justify-center">
+<div class="relative h-80 w-80 overflow-hidden rounded-full shadow-lg sm:h-96 sm:w-96" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxvPD6zj8XzlTFqj1KBM6iA2WQDIgruSZhhHwt-75GJ7k6Lrb4bzu8NuYikgtK5_wBPT7biWEZTShz7-fxVIcHQpOZhGiBugYG4TsOvIrxG0TcImzNRod_olIfOUsf3YF7SkkTxWEUrru5Ek4lG6kdgiopdxs3hlEqK3SV7CQ4tKX4drCRkDw65sloYQys3wpGUSoP_ImDBm0cKlcMsgBpwJTy9yQcd3vwAuXSD-6FXljSYluWhek5yEvHw631An8DKT0nt2IrBU4"); background-size: cover; background-position: center;'></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 sm:py-28 bg-var(--neutral-100)" id="projects">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h2 class="text-3xl font-bold tracking-tight text-var(--neutral-900) sm:text-4xl">My Projects</h2>
+<p class="mt-4 text-lg text-var(--neutral-600)">A selection of my work in the field of Artificial Intelligence.</p>
+</div>
+<div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+<div class="overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
+<div class="h-56 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0nrUIZSBomdLxEZZ9_wlH4TMc_OZvLzSOmQuY3cBZO-mohJ7WeSKoe1LSNvzzzQLASWIdLLBbkr4PRvxmmt1SMeQ5RIHucW0kMfBU_FiBzI2Id6ZvksyEqub0xKUlivEEbthoxyHB0RzEDHmUdaymR7X5PHOMtpLAm-3Z-jNI0yTb3ZHcPQF9CgvIi9joXWsIaqC0b_Wk5f7YTcjSPiJ0pfJrL1Ke61O4-OBVWcXlf2jvNED8LF0DdcVzUMjBPKspItZYgMF17Vc");'></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-var(--neutral-800)">AI-Powered Chatbot</h3>
+<p class="mt-2 text-sm text-var(--neutral-600)">Developed a customer service chatbot using natural language processing to improve user experience.</p>
+</div>
+</div>
+<div class="overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
+<div class="h-56 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpiDfu8PTCtC9XSGO3Mc6mF0cW8h7y5VJ5vktoENKChoMmh778A5YqI5oUHZq4oUPqmHcPxtdg2oPyN5XCobOSmotryaZvQont0LsKU3wDEOGFXALyN0FJDTl5LwpBI9LheTMLFmdiI9uiV-CMC72CbDeNqr2iDaLWGw7t-nVqru9HL8Zxs0eFPcyk1eAscLsDFoIWQor-qCuvk2J-z3Kx4r5J01QgcSfRbvxDFbJl0JRCYNOi3Rwu0tyzy9wyMpjRKUSdB-Ardog");'></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-var(--neutral-800)">Image Recognition System</h3>
+<p class="mt-2 text-sm text-var(--neutral-600)">Built an object detection and classification system with convolutional neural networks.</p>
+</div>
+</div>
+<div class="overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
+<div class="h-56 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQZamDpDdKeQ8tugd3YHlCkJnl75vsyHI2wBqm5-9OfMVmk_UKLUTL8AmQBmCW04tCzkNUZvqMFHYMeT6qiPrqHbPc5TUVjwrPtTwyVRFou6CLNMIpXbtIqJoyjnCt3jEmya8n3p6WnUVAAEMCuQvQ7Vcfmy3LQJk-k10wblMCjcwk7th21Mda0QfxRWZOwEfuRVDiAaeOhjiMOva8LtMheKugw2LLvzp4H_wCXgimlkXWsmfQscZH30K1A6FZ2xLev6ru-tjksuw");'></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-var(--neutral-800)">Predictive Analytics Dashboard</h3>
+<p class="mt-2 text-sm text-var(--neutral-600)">Created a dashboard for forecasting sales trends using time series analysis and data visualization.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 sm:py-28" id="skills">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h2 class="text-3xl font-bold tracking-tight text-var(--neutral-900) sm:text-4xl">Core Competencies</h2>
+<p class="mt-4 text-lg text-var(--neutral-600)">My technical toolkit for building intelligent solutions.</p>
+</div>
+<div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<div class="rounded-lg border border-var(--neutral-200) bg-white p-6 text-center">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-var(--primary-100) text-var(--primary-600)">
+<svg class="size-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3 class="mt-6 text-lg font-medium text-var(--neutral-800)">Programming Languages</h3>
+<p class="mt-2 text-sm text-var(--neutral-600)">Python, Java, C++, SQL</p>
+</div>
+<div class="rounded-lg border border-var(--neutral-200) bg-white p-6 text-center">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-var(--primary-100) text-var(--primary-600)">
+<svg class="size-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3 class="mt-6 text-lg font-medium text-var(--neutral-800)">Machine Learning</h3>
+<p class="mt-2 text-sm text-var(--neutral-600)">TensorFlow, PyTorch, Scikit-learn</p>
+</div>
+<div class="rounded-lg border border-var(--neutral-200) bg-white p-6 text-center">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-var(--primary-100) text-var(--primary-600)">
+<svg class="size-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3 class="mt-6 text-lg font-medium text-var(--neutral-800)">Data &amp; Databases</h3>
+<p class="mt-2 text-sm text-var(--neutral-600)">Pandas, NumPy, SQL, MongoDB</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 sm:py-28 bg-var(--neutral-100)" id="blog">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h2 class="text-3xl font-bold tracking-tight text-var(--neutral-900) sm:text-4xl">From the Blog</h2>
+<p class="mt-4 text-lg text-var(--neutral-600)">Sharing insights and thoughts on the world of AI.</p>
+</div>
+<div class="mt-16 max-w-lg mx-auto lg:max-w-none">
+<div class="overflow-hidden rounded-lg bg-white shadow-lg lg:grid lg:grid-cols-2 lg:gap-4">
+<div class="p-8 lg:p-10">
+<p class="text-sm font-medium text-var(--primary-600)">Latest Post</p>
+<h3 class="mt-2 text-2xl font-bold text-var(--neutral-800)">The Future of AI in Business</h3>
+<p class="mt-4 text-base text-var(--neutral-600)">
+                      Explore the transformative impact of artificial intelligence on various industries, from healthcare to finance, and what it means for the future of work.
+                    </p>
+<a class="mt-6 inline-flex items-center font-medium text-var(--primary-600) hover:text-var(--primary-500)" href="#">
+                      Read more <span class="ml-2">→</span>
+</a>
+</div>
+<div class="h-64 w-full bg-cover bg-center lg:h-auto" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDr1Mf1lQurtPxY3Pkv03VY--W6hlvVyprjA4SFbVzIfCvoVR4Is13WJNxjBteMm-6gVGDSHrAdN7U6P4_pM0NkxiNT8wlnxUs4YCUQfcCGGjsY49rYbQa2J8TOuRbrU8fsvPK8x3TQpgS10yQjBGHN2AVDSXoL1NvkQ7CZfJUoRODkZ0VS_DYVglzpkDWKVboRWqwoSErUwSeih-pbVzsM3pK0r075EidgI3Vdqotq7EsIVVx3BOnvp6I_tosnxEbmVqMrCrNRb5I");'></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 sm:py-28" id="contact">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-xl text-center">
+<h2 class="text-3xl font-bold tracking-tight text-var(--neutral-900) sm:text-4xl">Get in Touch</h2>
+<p class="mt-4 text-lg text-var(--neutral-600)">Have a project in mind or want to connect? Send me a message.</p>
+</div>
+<form class="mt-12 mx-auto max-w-lg">
+<div class="grid grid-cols-1 gap-y-6">
+<div>
+<label class="sr-only" for="email">Email</label>
+<input autocomplete="email" class="block w-full rounded-md border-var(--neutral-300) shadow-sm focus:border-var(--primary-500) focus:ring-var(--primary-500) sm:text-sm py-3 px-4" id="email" name="email" placeholder="Your Email" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="message">Message</label>
+<textarea class="block w-full rounded-md border-var(--neutral-300) shadow-sm focus:border-var(--primary-500) focus:ring-var(--primary-500) sm:text-sm py-3 px-4" id="message" name="message" placeholder="Your Message" rows="4"></textarea>
+</div>
+</div>
+<div class="mt-6 text-center">
+<button class="inline-flex items-center justify-center rounded-md border border-transparent bg-var(--primary-600) px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-var(--primary-500) focus:outline-none focus:ring-2 focus:ring-var(--primary-500) focus:ring-offset-2" type="submit">
+                    Submit
+                  </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<footer class="bg-var(--neutral-800) text-white">
+<div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center">
+<p class="text-sm text-var(--neutral-300)">© 2024 John Doe. All Rights Reserved.</p>
+<div class="flex space-x-6">
+<a class="text-var(--neutral-300) hover:text-white" href="#">
+<span class="sr-only">Twitter</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+</svg>
+</a>
+<a class="text-var(--neutral-300) hover:text-white" href="#">
+<span class="sr-only">LinkedIn</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-var(--neutral-300) hover:text-white" href="#">
+<span class="sr-only">GitHub</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.577.688.482A10.003 10.003 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>
