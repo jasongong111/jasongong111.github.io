@@ -4,7 +4,7 @@
     'use strict';
     
     const phrases = [
-        'AI Student & Full-Stack Developer passionate about building intelligent systems and scalable applications.',
+        'Computer Science Student & Full-Stack Developer passionate about building intelligent systems and scalable applications.',
         'Machine Learning enthusiast exploring neural networks, computer vision, and deep learning.',
         'Full-Stack Developer crafting end-to-end solutions with React, TypeScript, and Python.',
         'Open-source contributor and lifelong learner passionate about AI and web technologies.'
