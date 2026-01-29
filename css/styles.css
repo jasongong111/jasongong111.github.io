@@ -499,7 +499,7 @@ section {
 
 /* GitHub CTA Section */
 .github-cta {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     text-align: center;
     padding: 4rem 0;
 }
@@ -531,6 +531,37 @@ section {
 
 .github-link:hover svg {
     transform: rotate(10deg);
+}
+
+/* CV Download Section */
+.cv-download {
+    background-color: var(--bg-secondary);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.cv-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cv-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.cv-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cv-button {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
 }
 
 /* Footer */
