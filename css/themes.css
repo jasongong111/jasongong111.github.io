@@ -1,0 +1,52 @@
+/* Theme Variables */
+
+:root {
+    /* Light Theme (Default) */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F5F5;
+    --bg-tertiary: #E5E5E5;
+    --text-primary: #1A1A1A;
+    --text-secondary: #666666;
+    --text-tertiary: #999999;
+    --accent: #D97706;
+    --accent-light: #F59E0B;
+    --accent-dark: #B45309;
+    --border: #E5E5E5;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-lg: rgba(0, 0, 0, 0.15);
+    --card-bg: #FFFFFF;
+    --tag-bg: #F3F4F6;
+    --tag-text: #374151;
+}
+
+[data-theme="dark"] {
+    /* Dark Theme */
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #1A1A1A;
+    --bg-tertiary: #2A2A2A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A3A3A3;
+    --text-tertiary: #737373;
+    --accent: #F59E0B;
+    --accent-light: #FBBF24;
+    --accent-dark: #D97706;
+    --border: #2A2A2A;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-lg: rgba(0, 0, 0, 0.5);
+    --card-bg: #1A1A1A;
+    --tag-bg: #2A2A2A;
+    --tag-text: #D1D5DB;
+}
+
+/* Smooth theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
